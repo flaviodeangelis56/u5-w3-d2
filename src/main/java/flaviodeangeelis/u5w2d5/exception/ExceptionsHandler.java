@@ -26,6 +26,11 @@ public class ExceptionsHandler {
 
     }
 
+    @ExceptionHandler(UnauthorizedException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ErrorsResponseDTO handlerUnauthorizedException(UnauthorizedException e) {
+        return new ErrorsResponseDTO(e.getMessage(), new Date());
+    }
 
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)

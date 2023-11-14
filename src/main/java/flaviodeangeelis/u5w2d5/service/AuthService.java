@@ -46,7 +46,7 @@ public class AuthService {
         newUser.setEmail(body.email());
         newUser.setProfileImg("...");
         newUser.setPassword(passwordEncoder.encode(body.password()));
-        newUser.setRole(Role.USER);
+        newUser.setRole(Role.ADMIN);
         return userRepository.save(newUser);
     }
 }
